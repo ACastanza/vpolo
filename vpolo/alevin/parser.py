@@ -74,7 +74,7 @@ def read_quants_bin(base_location, clipped=False, mtype="data", rmode="rust"):
     if rmode == "rust":
         print("Using rust mode with {} rows and {} columns".format(num_cbs, num_genes))
         mat = sce.read_quants(quant_file, num_cbs, num_genes)
-        umi_matrix = csr_matrix((mat[2], mat[1], mat[0]), shape=(num_cbs, num_genes)).todense()
+        umi_matrix = csr_matrix((mat[2], mat[1], mat[0]), shape=(num_cbs, num_genes))
     else:
         with gzip.open( quant_file ) as f:
             line_count = 0
