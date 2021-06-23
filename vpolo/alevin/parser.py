@@ -132,7 +132,7 @@ def read_quants_bin(base_location, clipped=False, mtype="data", rmode="rust"):
     if clipped:
         alv = alv.loc[:, (alv != 0).any(axis=0)]
 
-    return (umi_matrix,gene_names,cb_names)
+    return [umi_matrix, gene_names, cb_names];
 
 def read_fry_bootstraps_bin(
     base_location,
